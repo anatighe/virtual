@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: virtual_file_development
+
+test:
+  adapter: postgresql
+  database: virtual_file_test
+
+production:
+  adapter: postgresql
+  database: virtual_file_production
