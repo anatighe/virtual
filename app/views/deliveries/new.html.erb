@@ -10,15 +10,11 @@
     <%= f.text_field :recipient_email %>
     
     <div id="documents">
-      <%= f.fields_for :document do |document_form| %>
+      <%= f.fields_for :documents, @delivery.documents.new do |document_form| %>
         <%= document_form.hidden_field :delivery_id %>
         <div class="new_form">
-          <%= document_form.label :name, 'Document name' %>
-          <%= document_form.text_field :name %>
-          <div class="new_form">
-            <%= document_form.label :doc, 'Upload File' %>
-            <%= document_form.file_field :doc %>
-          </div>
+          <%= document_form.label :doc, 'Upload File' %>
+          <%= document_form.file_field :doc %>
         </div>
       <% end %>
     </div>  

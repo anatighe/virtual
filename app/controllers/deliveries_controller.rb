@@ -7,7 +7,7 @@ class DeliveriesController < ApplicationController
     @delivery = Delivery.new(delivery_params)
     if @delivery.save
       flash[:notice] = "Your files are on their way!"
-      redirect_to new_delivery_path
+      redirect_to root_path
     else
       flash[:alert] = "Something went wrong!"
       render :new

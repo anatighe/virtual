@@ -14,6 +14,10 @@ class DocumentsController < ApplicationController
     end  
   end
 
+  def show
+    @document = Document.find[:id]
+  end
+
 private
   def document_params
     params.require(:document).permit(:delivery_id, :doc, :encrypted_token)
