@@ -12,9 +12,11 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'validates_timeliness'
+gem 'paperclip', '~> 3.0'
 gem 'jquery-turbolinks'
 gem 'aws-sdk'
-gem 'paperclip', '~> 3.0'
+gem 'aws-s3'
+gem 'nested_form'
 
 group :development, :test do
   gem 'rspec-rails'

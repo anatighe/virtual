@@ -1,0 +1,26 @@
+<h1>Send someone a file.</h1>
+  <%= nested_form_for @delivery do |f| %>
+    <%= f.label :name, 'Your name' %>
+    <%= f.text_field :name %>
+
+    <%= f.label :user_email, 'Your e-mail address:' %>
+    <%= f.text_field :user_email %>
+
+    <%= f.label :recipient_email, 'Recipient e-mail' %>
+    <%= f.text_field :recipient_email %>
+    
+    <div id="documents">
+      <%= f.fields_for :document do |document_form| %>
+        <%= document_form.hidden_field :delivery_id %>
+        <div class="new_form">
+          <%= document_form.label :name, 'Document name' %>
+          <%= document_form.text_field :name %>
+          <div class="new_form">
+            <%= document_form.label :doc, 'Upload File' %>
+            <%= document_form.file_field :doc %>
+          </div>
+        </div>
+      <% end %>
+    </div>  
+  <%= f.submit "submit", :class => "btn btn-primary" %>
+<% end %>
